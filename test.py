@@ -20,8 +20,6 @@ for trains in train_names:
         imgs.append(cv.imread(train_dataset + '/' + trains))  # Собираем массив фотографий
         roibox.append(open(train_dataset + '/' + trains.replace('jpg', 'txt')).read().split(
             ' '))  # собираем массив с координатами ROI
-        if trains == 'Abyssinian_112.jpg':
-            break
 for roi in roibox:
     if roi[0] == '1':
         train_labels.append(0)  # выбираем номера классов животных 1-кошка 2-собака
